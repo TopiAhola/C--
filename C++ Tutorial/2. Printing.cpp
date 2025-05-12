@@ -45,20 +45,13 @@ int test3() {
     return 0;
 }
 
-int test4() {
-
-    
-}
-
-
-
 
 //Pääfunktio?? Miksi?
 int main() {    
     test1();
     test2();
     test3();
-    test4();
+ 
 
     return 0;
 }
