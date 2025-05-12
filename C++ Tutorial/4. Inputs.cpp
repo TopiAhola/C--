@@ -2,6 +2,7 @@
 using namespace std;
 
 // cin >> variable
+// cin ottaa vain ensimmäisen sanan...
 int func1(){
     string text;
     cout << "Kirjoita:";

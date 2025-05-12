@@ -38,8 +38,18 @@ double d1 = 12E4;
 
 
 //The char data type is used to store a single character. The character must be surrounded by single quotes, like 'A' or 'c':
-
 char myGrade = 'B';
+char ascii = 10;
+
+//Strings
+To use strings, you must include an additional header file in the source code, the <string> library:
+// <iostream> sisältää stringit??? koska ohjelmat toimii ilman <string> -kirjastoa...
+Example
+#include <string>   // Include the string library
+string greeting = "Hello";  // Create a string variable
+// Stringit on kaksoislainausmerkeissä: "" !!!
+
+
 
 
 // Math
@@ -89,3 +99,30 @@ Operator	Name	        Description	                            Example
 && 	        Logical and	    Returns true if both  are true	        x < 5 &&  x < 10	
 || 	        Logical or	    Returns true if one of the is true	    x < 5 || x < 4	
 !	        Logical not	    Reverse the result (true to false) 	    !(x < 5 && x < 10)
+
+
+// String functions
+
+Function	Description
+at()	    Returns an indexed character from a string
+length()	Returns the length of a string
+size()	    Alias of length(). Returns the length of a string
+max_size()	Returns the maximum length of a string
+empty()	    Checks wheter a string is empty or not
+append()	Appends a string (or a part of a string) to another string
+substr()	Returns a part of a string from a start index (position) and length
+find()	    Returns the index (position) of the first occurrence of a string or character
+rfind() 	Returns the index (position) of the last occurrence of a string or character
+replace()	Replaces a part of a string with another string
+insert()	Inserts a string at a specified index (position)
+erase()	    Removes characters from a string
+compare()	Compares two strings
+
+// String special characters
+
+Escape character	Result	Description
+\'	                '	Single quote
+\"	                "	Double quote
+\\	                \	Backslash
+\n	                    New Line	
+\t	                    Tab
