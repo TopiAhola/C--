@@ -102,11 +102,19 @@ int func6(){
     string input;  
     cout << "Kirjoita: ";
     getline(cin, input);
-    cout << "Kirjoitit: " << input;
+    cout << "Kirjoitit: " << input << endl;
     
     return 0;
 }
 
+// C:ssä ei ole stringejä vaan ne ovat char arraytä
+// C++ tukee c-tyylin stringejä:
+int func7(){
+    char string_array[] = "Hello";
+    cout << string_array << endl;
+
+    return 0;
+}
 
 
 int main(){
@@ -116,5 +124,6 @@ int main(){
     func4();
     func5();
     func6();
+    func7();
     return 0;
 }

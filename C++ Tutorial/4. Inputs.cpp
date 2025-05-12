@@ -12,9 +12,6 @@ int func1(){
 }
 
 
-
-
-
 int main(){
     func1();
 

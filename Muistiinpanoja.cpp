@@ -126,3 +126,48 @@ Escape character	Result	Description
 \\	                \	Backslash
 \n	                    New Line	
 \t	                    Tab
+
+
+// Math
+#include <cmath>
+
+/*
+cmath header file sisältää funktiot:
+ div
+ acos
+ asin
+ atan
+ atan2
+ ceil
+ cos
+ cosh
+ exp
+ fabs
+ floor
+ fmod
+ frexp
+ ldexp
+ log
+ log10
+ modf
+ pow
+ sin
+ sinh
+ sqrt
+ tan
+ tanh
+*/
+
+
+// if - else , else if, switch
+
+C++ has the following conditional statements:
+
+Use if to specify a block of code to be executed, if a specified condition is true
+Use else to specify a block of code to be executed, if the same condition is false
+Use else if to specify a new condition to test, if the first condition is false
+Use switch to specify many alternative blocks of code to be executed
+
+if (20 > 18) {
+  cout << "20 is greater than 18";
+}
