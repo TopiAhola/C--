@@ -168,6 +168,14 @@ Use else to specify a block of code to be executed, if the same condition is fal
 Use else if to specify a new condition to test, if the first condition is false
 Use switch to specify many alternative blocks of code to be executed
 
-if (20 > 18) {
-  cout << "20 is greater than 18";
+int myNum = 10; // Is this a positive or negative number?
+
+if (myNum > 0) {
+  cout << "The value is a positive number.\n";
+} else if (myNum < 0) {
+  cout << "The value is a negative number.\n";
+} else {
+  cout << "The value is 0.\n";
 }
+
+// Switch
