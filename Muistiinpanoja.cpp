@@ -179,3 +179,61 @@ if (myNum > 0) {
 }
 
 // Switch
+The switch expression is evaluated once
+The value of the expression is compared with the values of each case
+If there is a match, the associated block of code is executed
+The break and default keywords are optional?
+The default keyword specifies some code to run if there is no case match.
+
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+// While
+
+int i = 0;
+while (i < 5) {
+  cout << i << "\n";
+  i++;
+}
+
+// do-while
+The do/while loop is a variant of the while loop. 
+This loop will execute the code block once, before checking if the condition is true, 
+then it will repeat the loop as long as the condition is true.
+
+do {
+  // code block to be executed
+}
+while (condition); // while on {} sulkeiden jälkeen...
+
+
+
+// For
+
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+Statement 1 is executed (one time) before the execution of the code block.
+Statement 2 defines the condition for executing the code block.
+Statement 3 is executed (every time) after the code block has been executed.
+
+// For-each
+There is also a "for-each loop" (also known as ranged-based for loop), which is used exclusively to loop through elements in an array (or other data structures):
+
+for (type variableName : arrayName) {
+  // code block to be executed
+}
+
+//Example
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i : myNumbers) {
+  cout << i << "\n";
+}
