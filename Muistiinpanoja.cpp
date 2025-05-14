@@ -469,3 +469,97 @@ When used in declaration (string* ptr), it creates a pointer variable.
 When not used in declaration, it act as a dereference operator.
 
 // Pointerin arvon muuttaminen muuttaa alkuperaisen muuttujan arvoa!
+
+
+
+
+//////////////////////////////////////////////////////////////////
+// Funktiot
+
+A C++ function consist of two parts:
+
+Declaration: the return type, the name of the function, and parameters (if any)
+Definition: the body of the function (code to be executed)
+
+// Function declaration
+void myFunction();
+
+// The main method
+int main() {
+  myFunction();  // call the function
+  return 0;
+}
+
+// Function definition
+void myFunction() {
+  cout << "I just got executed!";
+
+// Default parameters
+
+void myFunction(string country = "Norway") {
+  cout << country << "\n";
+}
+
+
+/// Referenssit on tavallaan globaaleja. !
+In the examples from the previous page, we used normal variables when we passed parameters 
+to a function. You can also pass a reference to the function. This can be useful when you
+need to change the value of the arguments:
+
+Example
+Pass integers by reference:
+
+void swapNums(int &x, int &y) {
+  int z = x;
+  x = y;
+  y = z;
+}
+
+int main() {
+  int firstNum = 10;
+  int secondNum = 20;
+
+  cout << "Before swap: " << "\n";
+  cout << firstNum << secondNum << "\n";
+
+  // Call the function, which will change the values of firstNum and secondNum
+  swapNums(firstNum, secondNum);
+
+  cout << "After swap: " << "\n";
+  cout << firstNum << secondNum << "\n";
+
+  return 0;
+}
+
+// Arrayt funktioissa vaikuttaa ikäviltä
+
+Example
+void myFunction(int myNumbers[5]) {
+  for (int i = 0; i < 5; i++) {
+    cout << myNumbers[i] << "\n";
+  }
+}
+
+int main() {
+  int myNumbers[5] = {10, 20, 30, 40, 50};
+  myFunction(myNumbers);
+  return 0;
+}
+
+Example Explained
+The function (myFunction) takes an array as its parameter (int myNumbers[5]), 
+and loops through the array elements with the for loop.
+
+When the function is called inside main(), we pass along the myNumbers array, 
+which outputs the array elements.
+
+Note that when you call the function, you only need to use the name of the array 
+when passing it as an argument myFunction(myNumbers). However, the full declaration 
+of the array is needed in the function parameter (int myNumbers[5]).
+
+
+// Fuction overloading: Kahdella funktiolla voi olla sama nimi jos niillä on eri parametrit!
+int myFunction(int x)
+float myFunction(float x)
+double myFunction(double x, double y)
+

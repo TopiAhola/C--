@@ -89,4 +89,11 @@ const l-value or r-value reference. A standard proposal N3994, already implement
 simplify it into the form for (elem: il).
 
 
+
+Arrayt ja funktiot:
+
+
+
+
+
 */
