@@ -40,7 +40,7 @@ int array_loop2(){
 int m_dimension(){
     int mTable[4][4] = {{1,1,1,1},{2,2,2,2},{3,3,3,3},{4,4,4,4}};
     int sum = 0;
-    for(auto & rivi : mTable){             // Mitä tämä tekee? 
+    for(auto & rivi : mTable){             // Mitä tämä tekee? & yleensä antaa muuttujan muistiosoitteen?
         for(int element : rivi){           // Vaikuttaa paremmalta tavalta iteroida satunnaisen kokoisia
             sum += element;
         } 

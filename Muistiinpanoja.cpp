@@ -127,7 +127,7 @@ Escape character	Result	Description
 \n	                    New Line	
 \t	                    Tab
 
-
+//////////////////////////////////////////////////////////////////
 // Math
 #include <cmath>
 
@@ -161,7 +161,7 @@ cmath header file sisältää funktiot:
  round();   pyöristää kokonaislukuun
 */
 
-
+//////////////////////////////////////////////////////////////////
 // if - else , else if, switch
 
 C++ has the following conditional statements:
@@ -302,7 +302,7 @@ for (int i : numbers) {
   cout << i << "\n"; 
 }
 
-
+//////////////////////////////////////////////////////////////////
 // Arrays - Vectors
 For operations that require adding and removing array elements, C++ provides vectors, 
 which are resizable arrays.
@@ -332,3 +332,140 @@ string letters[2][4] = {
   { "A", "B", "C", "D" },
   { "E", "F", "G", "H" }
 };
+
+//////////////////////////////////////////////////////////////////
+
+// Structures = struct
+Unlike an array, a structure can contain many different data types (int, string, bool, etc.).
+
+struct {             // Structure declaration
+  int myNum;         // Member (int variable)
+  string myString;   // Member (string variable)
+} myStructure;       // Structure variable
+
+// Pointereista structiin:
+// pointerit structin jäseniin voi tehdä nuolella? ->
+// (*p_myStructure).myNum on pointer structiin josta otetaan jäsen myNum
+// tai: p_myStructure->myNum 
+// ilmaisu: (*pointer) on dereference? Hakee jutun johon pointer osoittaa.
+
+
+// Iteroinnista
+// Structia ei ilmeisesti voi iteroida perus C++ssa. tarvitsee lisäkirjaston.
+
+
+
+//////////////////////////////////////////////////////////////////
+
+// Enumeration = enum
+An enum is a special type that represents a group of constants (unchangeable values).
+To create an enum, use the enum keyword, followed by the name of the enum, and separate
+ the enum items with a comma:
+
+enum Level {
+  LOW,
+  MEDIUM,
+  HIGH
+};
+
+Now that you have created an enum variable (myVar), you can assign a value to it.
+The assigned value must be one of the items inside the enum (LOW, MEDIUM or HIGH):
+
+enum Level myVar = MEDIUM;
+
+By default, the first item (LOW) has the value 0, the second (MEDIUM) has the value 1, etc.
+If you now try to print myVar, it will output 1, which represents MEDIUM:
+
+// enum arvot voi muuttaa oletusarvoista:
+enum Level {
+  low = 25,
+  MEDIUM = 50,
+  HIGH = 75
+};
+
+//////////////////////////////////////////////////////////////////
+HUOM: & merkki hakee muuttujan muistiosoitteen! Käytetään pointereiden 
+ja muiden juttujen yhteydessä. 
+
+
+// References = &
+A reference variable is a "reference" to an existing variable, 
+and it is created with the & operator:
+
+string food = "Pizza";  // food variable
+string &meal = food;    // reference to food
+Now, we can use either the variable name food or the reference name meal 
+to refer to the food variable:
+
+Example
+string food = "Pizza";
+string &meal = food;
+
+cout << food << "\n";  // Outputs Pizza
+cout << meal << "\n";  // Outputs Pizza
+
+//Mitä hyötyä tästä on ja miten tämä liittyy pointereihin????
+-pointerin voi käyttää uudestaan osoittamaan johonkin toiseen arvoon
++referenssiä ei voi käyttää uudestaan
+-pointerilla on oma muistiosoite jossa se sijaitsee
++referenssi ei vie tilaa stackistä?
+
++References	                                    
+-Pointers
+Reassignment	
++The variable cannot be reassigned in Reference.	
+-The variable can be reassigned in Pointers.
+
+Memory Address	
++It shares the same address as the original variable.	
+-Pointers have their own memory address.
+
+Work	
++It is referring to another variable.	
+-It is storing the address of the variable.
+
+Null Value	
++It does not have null value.	
+-It can have value assigned as null.
+
+Arguments	
++This variable is referenced by the method pass by value.	
+-The pointer does it work by the method known as pass by reference.
+
+// Milloin käytetään:
+Use references: 
+In function parameters and return types.
+
+Use pointers: 
+If pointer arithmetic or passing a NULL pointer is needed. For example, for arrays (Note that accessing an array is implemented using pointer arithmetic).
+To implement data structures like a linked list, a tree, etc. and their algorithms. This is so because, in order to point to different cells, we have to use the concept of pointers.
+
+
+//////////////////////////////////////////////////////////////////
+// Pointerit !!!
+
+// Pointerin voi määritellä eri tavoilla:
+string* mystring;   // Preferred
+string *mystring;   // Tämä näyttää samalta kuin pointerin käyttäminen...
+string * mystring;  // Tykkään tästä.
+
+// Pointerille voi antaa arvon joko määriteltäessä tai myöhemmin:
+int a = 10;
+
+int * p = &a;    // &a hakee a:n muistiosoitteen
+// OR 
+int * p;
+p = &a;
+
+
+// Muuttuja johon pointer osoittaa haetaan laittamalla * tähti: (Dereference)
+*pointer 
+// Pelkkä pointer ilman tähteä viittaa pointeriin itseensä... (Reference)
+pointer
+
+Note that the * sign can be confusing here, as it does two different things in our code:
+
+When used in declaration (string* ptr), it creates a pointer variable.
+When not used in declaration, it act as a dereference operator.
+
+// Pointerin arvon muuttaminen muuttaa alkuperaisen muuttujan arvoa!
