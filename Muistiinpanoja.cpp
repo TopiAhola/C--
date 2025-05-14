@@ -156,6 +156,9 @@ cmath header file sisältää funktiot:
  sqrt
  tan
  tanh
+
+ ja: 
+ round();   pyöristää kokonaislukuun
 */
 
 
@@ -177,6 +180,15 @@ if (myNum > 0) {
 } else {
   cout << "The value is 0.\n";
 }
+
+// "Ternary operator" - Lyhyt if-else
+
+string func2(int a, int b){
+    // variable = (condition) ? expressionTrue : expressionFalse;
+    string ret_str = (a > b) ? "a on isompi" : "a ei ole isompi";
+    return ret_str;
+}
+
 
 // Switch
 The switch expression is evaluated once
@@ -237,3 +249,86 @@ int myNumbers[5] = {10, 20, 30, 40, 50};
 for (int i : myNumbers) {
   cout << i << "\n";
 }
+
+
+// Break - Continue
+
+// break
+Break can be used to "jump out" of a switch statement.
+The break statement can also be used to jump out of a loop.
+
+This example jumps out of the loop when i is equal to 4:
+
+Example
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  cout << i << "\n";
+}
+
+
+// continue
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+This example skips the value of 4:
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  cout << i << "\n";
+}
+
+Break and continue work in for and while loops 
+
+
+// Arrays
+Arrays contain only one type?
+string animals[3] = {"cat","dog","bird"};
+int numbers[4] = {1,2,3,4};
+
+Change value in an array:
+numbers[0] = 5;
+
+//Kokoa ei ole pakko määritellä mutta se ei muutu automaattisesti
+int arr[] = {1,2,3}; Saa kookseen 3.
+int arr[]; koko on 0 ja siihen ei voi lisätä mitään...
+int arr[3]; koko on 3 mutta on tyhjä 
+
+//loop an array
+//for-each
+
+for (int i : numbers) {
+  cout << i << "\n"; 
+}
+
+
+// Arrays - Vectors
+For operations that require adding and removing array elements, C++ provides vectors, 
+which are resizable arrays.
+The size of a vector is dynamic, meaning it can grow and shrink as needed.
+Vectors are found in the <vector> library, and they come with many useful functions to add, 
+remove and modify elements:
+
+#include <vector> 
+#include <string>
+vector<string> cars = {"Volvo", "BMW", "Ford"};
+vector<int> numbers = {1,2,3}
+
+// Adding another element to the vector
+cars.push_back("Tesla");
+
+
+
+// multi dimensional arrays
+A multi-dimensional array is an array of arrays.
+To declare a multi-dimensional array, define the variable type, specify the name of the 
+array followed by square brackets which specify how many elements the main array has, 
+followed by another set of square brackets which indicates how many elements the sub-arrays have:
+
+string letters[2][4];
+
+string letters[2][4] = {
+  { "A", "B", "C", "D" },
+  { "E", "F", "G", "H" }
+};
