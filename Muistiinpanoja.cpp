@@ -563,3 +563,22 @@ int myFunction(int x)
 float myFunction(float x)
 double myFunction(double x, double y)
 
+// Function scope
+
+// Muuttujat jotka on määritelty funktion ulkopuolella on globaaleja (eli main-funktion ulkopuolella pääohjelmassa)
+// Paikallinen samanniminen muuttuja yliajaa globaalin tilapäisesti mutta ei muuta globaalin arvoa.
+Example
+The function will print the local x, and then the code will print the global x:
+
+int x = 5;                // Global variable x
+
+void myFunction() {  
+  int x = 22;             // Local variable with the same name as the global variable (x)
+  cout << x << "\n";      // Refers to the local variable x
+}
+
+int main() {
+  myFunction();
+  cout << x;              // Refers to the global variable x
+  return 0;
+}

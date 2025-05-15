@@ -1,0 +1,55 @@
+#include <cstdlib>  
+using namespace std;
+
+int main(){
+/*
+Memory in C:
+
+Dynamic memory is memory that is allocated after the program starts running. 
+Allocation of dynamic memory can also be referred to as runtime memory allocation.
+
+Unlike with static memory, you have full control over how much memory is being used at any time. 
+You can write code to determine how much memory you need and allocate it.
+
+Dynamic memory does not belong to a variable, it can only be accessed with pointers.
+
+To allocate dynamic memory, you can use the malloc() or calloc() functions. 
+It is necessary to include the <stdlib.h> header to use them. The malloc() and calloc() functions 
+allocate some memory and return a pointer to its address.
+*/
+int size = 4;
+int amount = 2;
+int *ptr1 = malloc(size);
+int *ptr2 = calloc(amount, size);
+/*
+The malloc() function has one parameter, size, which specifies how much memory to allocate, 
+measured in bytes.
+
+The calloc() function has two parameters:
+
+amount - Specifies the amount of items to allocate
+size - Specifies the size of each item measured in bytes
+Note: The data in the memory allocated by malloc() is unpredictable. To avoid unexpected values, 
+make sure to write something into the memory before reading it.
+
+Unlike malloc(), the calloc() function writes zeroes into all of the allocated memory. 
+However, this makes calloc() slightly less efficient.
+
+If the amount of memory you reserved is not enough, you can reallocate it to make it larger.
+
+Reallocating reserves a different (usually larger) amount of memory while keeping the data 
+that was stored in it.
+You can change the size of allocated memory with the realloc() function.
+
+The realloc() function takes two parameters:
+*/
+int *ptr2 = realloc(ptr1, size);
+/*
+
+
+
+
+
+
+*/
+}

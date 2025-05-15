@@ -40,9 +40,8 @@ int array_argument2(int * p_ar){
 
 
 // Fuction overloading: Kahdella funktiolla voi olla sama nimi jos niillä on eri parametrit!
-int myFunction(int x)
-float myFunction(float x)
-double myFunction(double x, double y)
+float summa(float a, float b){return a+b;}
+double summa(double x, double y){return x+y;}
 
 
 
@@ -70,6 +69,12 @@ int main(){
     array_argument(arra);               // Tulostaa vain 12 ...
     int * p_arra = &arra[0];
     array_argument2(p_arra);
+
+    //overloading:
+    float fa = 1.1, fb = 2.2;
+    double da = 1.11, db = 2.22;
+    cout << "Summa float ja double: " << summa(fa,fb) << " " << summa(da,db) << endl;
+
 
  return 0;   // void main aiheuttaa jonkun ongelman compilerin kanssa....
 }
